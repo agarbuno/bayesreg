@@ -11781,6 +11781,9 @@ ul.typeahead-list > li > a {
   font-size: 160%;
   overflow-y: scroll;
 }
+html { 
+  background-color: #fff !important; 
+}
 .reveal pre {
   width: inherit;
   padding: 0.4em;
@@ -11843,6 +11846,7 @@ a.anchor-link {
 .rendered_html p {
   text-align: inherit;
 }
+
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
@@ -14905,31 +14909,6 @@ RERERERERKri5AQRERERERERqYqTE0RERERERESkqv8Aiz/TvZ6Dtc8AAAAASUVORK5CYII=
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[156]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">plot_admit</span><span class="p">(</span><span class="n">phat</span><span class="p">,</span> <span class="n">pstd</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span> 
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparison of observed vs predicted frequencies </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">phat</span><span class="p">)),</span> <span class="n">phat</span><span class="p">);</span> 
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">phat</span><span class="p">)),</span> <span class="n">pobs</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">se</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">phat</span><span class="p">)),</span> <span class="n">phat</span><span class="p">,</span> <span class="n">pstd</span><span class="p">):</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">],</span> <span class="p">[</span><span class="n">m</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">se</span><span class="p">,</span> <span class="n">m</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">se</span><span class="p">],</span> <span class="s1">&#39;b:&#39;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">phat</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">phat</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">phat</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]],</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">phat</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">pobs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pobs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]],</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">xc</span> <span class="ow">in</span> <span class="n">x_loc</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xc</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+.</span><span class="mi">5</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">dept</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">);</span>
-</pre></div>
-
-</div>
 </div>
 </div>
 
@@ -26699,7 +26678,7 @@ RCKRSCQSScn5/wq8B/YQkp6xAAAAAElFTkSuQmCC
 </div>
 </div>
 
-</div>
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[159]:</div>
@@ -36673,7 +36652,7 @@ kiRJqrv/D6T6aBTu2JA4AAAAAElFTkSuQmCC
 </div>
 </div>
 
-</div>
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[167]:</div>
@@ -37161,7 +37140,8 @@ ERERkTykMCciIiIiIpKH/j/gIaN7hp86QQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Model-comparison-and-model-averaging">Model comparison and model averaging<a class="anchor-link" href="#Model-comparison-and-model-averaging">&#194;&#182;</a></h2><p>Instead of comparing likelihoods (never!)</p>
+<h2 id="Model-comparison-and-model-averaging">Model comparison and model averaging<a class="anchor-link" href="#Model-comparison-and-model-averaging">&#194;&#182;</a></h2><p>Instead of using likelihoods (never!) compare in terms of a distance between <strong><code>in-sample</code></strong> and <strong><code>out-sample</code></strong> accuracy.</p>
+<p>Information criteria provides a principled way of measuring distance from the target (<em>true model</em>).</p>
 <ul>
 <li><p>Deviance Information criteria (DIC)</p>
 </li>
@@ -37176,10 +37156,20 @@ ERERkTykMCciIiIiIpKH/j/gIaN7hp86QQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="DIC">DIC<a class="anchor-link" href="#DIC">&#194;&#182;</a></h3>
+<h3 id="DIC">DIC<a class="anchor-link" href="#DIC">&#194;&#182;</a></h3><p>Is a Bayesian information crierion that uses the posterior samples to <strong>produce a posterior</strong> distribution of the Deviance.</p>
+$$ 
+\begin{align}
+DIC &amp; = \bar{D} + (\bar{D} - \hat{D}) \\
+ &amp; = \bar{D} + P_D ,
+\end{align}
+$$<p></p>
+<p>where $P_D$ is interpreted as the <em>effective</em> number of parameters (as in the traditional AIC).</p>
+<p>It is an Akaike Information Criteria (AIC) that <strong>uses informative priors.</strong></p>
+<p>If parameters are skewed, then it is better not to use it.</p>
+
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[168]:</div>
@@ -37218,15 +37208,18 @@ Varying intercept and slope .. 	 : 140.81519463
 </div>
 </div>
 
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="WAIC">WAIC<a class="anchor-link" href="#WAIC">&#194;&#182;</a></h3>
+<h3 id="WAIC">WAIC<a class="anchor-link" href="#WAIC">&#194;&#182;</a></h3><p>It uses a point-wise estimate of deviance ,<em>eg</em> it acknowledges that certaint data-points are harder to predict and have greater uncertainties.</p>
+$$ \text{WAIC} = -2 \, ( \, \text{lppd}- P_{\text{WAIC}} \, )$$<p></p>
+<p>where again $P_{\text{WAIC}}$ is interpreted as estimated effective parameters.</p>
+
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[169]:</div>
@@ -37259,7 +37252,7 @@ Varying intercept and slope .. 	 : 140.81519463
 </div>
 </div>
 
-</div><div class="fragment">
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[170]:</div>
@@ -37366,7 +37359,8 @@ Varying intercept and slope .. 	 : 140.81519463
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Shrinkage">Shrinkage<a class="anchor-link" href="#Shrinkage">&#194;&#182;</a></h2>
+<h2 id="Shrinkage">Shrinkage<a class="anchor-link" href="#Shrinkage">&#194;&#182;</a></h2><p>By using the multilevel model the data expresses itself a <strong>regularizing prior</strong>.</p>
+
 </div>
 </div>
 </div>
@@ -37375,15 +37369,7 @@ Varying intercept and slope .. 	 : 140.81519463
 <div class="prompt input_prompt">In&nbsp;[177]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Shrinking effect of multilevel priors </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">unpooled_trace</span><span class="p">[</span><span class="n">n_warm</span><span class="p">:][</span><span class="s1">&#39;alpha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> 
-            <span class="n">unpooled_trace</span><span class="p">[</span><span class="n">n_warm</span><span class="p">:][</span><span class="s1">&#39;beta&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">c</span> <span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;unpooled&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">full_hierarchical_trace</span><span class="p">[</span><span class="n">n_warm</span><span class="p">:][</span><span class="s1">&#39;alpha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> 
-            <span class="n">full_hierarchical_trace</span><span class="p">[</span><span class="n">n_warm</span><span class="p">:][</span><span class="s1">&#39;beta&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">c</span> <span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;hierarchical&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
-               <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;expand&quot;</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Intercept estimates&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Slope intercept&#39;</span><span class="p">);</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">plot_shrinkage</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -38240,28 +38226,6 @@ Interrupted at 16,100 [32%]: Average Loss = 203.3
 <h2 id="Adaptive-regularising-priors">Adaptive regularising priors<a class="anchor-link" href="#Adaptive-regularising-priors">&#194;&#182;</a></h2>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[115]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">plot_regularize</span><span class="p">():</span> 
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparison between estimates and observed frequencies</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">phat</span><span class="p">)),</span> <span class="n">pobs</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;observed&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">80</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">);</span>
-    <span class="c1"># plt.scatter(range(len(phat)), punp, label = &#39;unpooled&#39;, c = &#39;g&#39;, s = 80);</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">phat</span><span class="p">)),</span> <span class="n">phat</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;partially pooled&#39;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">80</span><span class="p">);</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
-               <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;expand&quot;</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">xc</span> <span class="ow">in</span> <span class="n">x_loc</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xc</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">((</span><span class="mf">16.5</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mf">16.5</span><span class="o">+</span><span class="mf">30.5</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mf">30.5</span><span class="o">+</span><span class="mi">48</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;small tanks&#39;</span><span class="p">,</span> <span class="s1">&#39;medium tanks&#39;</span><span class="p">,</span> <span class="s1">&#39;large tanks&#39;</span><span class="p">],</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">);</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -43559,6 +43523,18 @@ MMQRERERERGpyP8PvdcsYyMs/ioAAAAASUVORK5CYII=
 </div>
 </div>
 
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Thanks!<br>
+Alfredo Garbuno<br>
+<a href="https://github.com/agarbuno">github</a><br>
+<a href="http://agarbuno.github.io/">website</a></p>
+
+</div>
+</div>
 </div></section></section>
 </div>
 </div>
@@ -43583,9 +43559,12 @@ require(
             controls: true,
             progress: true,
             history: true,
+            width: "80%",
+            height: "100%",
+            margin: 0,
 
             theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+            transition: Reveal.getQueryHash().transition || 'convex', // default/cube/page/concave/zoom/linear/none
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
