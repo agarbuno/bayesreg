@@ -11868,7 +11868,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Tutorial-on-Bayesian-linear-regression">Tutorial on Bayesian linear regression<a class="anchor-link" href="#Tutorial-on-Bayesian-linear-regression">&#194;&#182;</a></h1><p><strong>Alfredo Garbuno-Inigo</strong><br>
+<h1 id="Tutorial-on-Bayesian-regression-(Pt-I)">Tutorial on Bayesian regression (Pt I)<a class="anchor-link" href="#Tutorial-on-Bayesian-regression-(Pt-I)">&#194;&#182;</a></h1><p><strong>Alfredo Garbuno-Inigo</strong><br>
 Phd student, University of Liverpool<br>
 Institute for Risk and Uncertainty</p>
 
@@ -11928,7 +11928,9 @@ Institute for Risk and Uncertainty</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-linear-regression-model">The linear regression model<a class="anchor-link" href="#The-linear-regression-model">&#194;&#182;</a></h2><p>From a frequentist point of view (<em>in matrix form</em>):</p>
+<h2 id="The-linear-regression-model">The linear regression model<a class="anchor-link" href="#The-linear-regression-model">&#194;&#182;</a></h2><ul>
+<li>From a frequentist point of view (<em>in matrix form</em>):</li>
+</ul>
 $$ Y = X\beta + \epsilon,$$<p></p>
 <p>where $Y$ is the output of a linear combination of <strong>predictors</strong> $X$.</p>
 
@@ -11939,8 +11941,12 @@ $$ Y = X\beta + \epsilon,$$<p></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The coefficients $\beta$ are <em>unknown</em> but <em>fixed</em> quantities.</p>
-<p>The vector $\epsilon$ is the error term assumed to be normally distributed. (Zero mean, finite variance)</p>
+<ul>
+<li><p>The coefficients $\beta$ are <em>unknown</em> but <em>fixed</em> quantities.</p>
+</li>
+<li><p>The vector $\epsilon$ is the error term assumed to be normally distributed. (Zero mean, finite variance)</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -11949,7 +11955,9 @@ $$ Y = X\beta + \epsilon,$$<p></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The solution is found by maximum likelihood estimation or ordinary least squares.</p>
+<ul>
+<li>The solution is found by maximum likelihood estimation or ordinary least squares.</li>
+</ul>
 $$ \hat{\beta}_{\text{OLS}} = \left(X^\top X\right)^{-1}X^\top Y.$$<p></p>
 
 </div>
@@ -11959,10 +11967,16 @@ $$ \hat{\beta}_{\text{OLS}} = \left(X^\top X\right)^{-1}X^\top Y.$$<p></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Probabilistic-reformulation">Probabilistic reformulation<a class="anchor-link" href="#Probabilistic-reformulation">&#194;&#182;</a></h2><p>In a Bayesian setting, both $Y$ and $\beta$ are treated as random variables.</p>
-<p>The assumption of $Y$, being a random deviation from the linear model is the same.</p>
-<p>We extended to complete model through <strong>prior beliefs</strong> on the regression coefficients and the measurement noise.</p>
-<p>Finally, defining the complete model as</p>
+<h2 id="Probabilistic-reformulation">Probabilistic reformulation<a class="anchor-link" href="#Probabilistic-reformulation">&#194;&#182;</a></h2><ul>
+<li><p>Both $Y$ and $\beta$ are treated as random variables.</p>
+</li>
+<li><p>The assumption of $Y$, being a random deviation from the linear model is the same.</p>
+</li>
+<li><p>We extended to complete model through <strong>prior beliefs</strong> on the regression coefficients and the measurement noise.</p>
+</li>
+<li><p>Finally, defining the complete model as</p>
+</li>
+</ul>
 $$
 \begin{align}
 Y \, | \, X, \beta, \sigma^2    &amp;\sim \mathcal{N}(X\beta, \sigma^2), \\
