@@ -11781,6 +11781,9 @@ ul.typeahead-list > li > a {
   font-size: 160%;
   overflow-y: scroll;
 }
+html { 
+  background-color: #fff !important; 
+}
 .reveal pre {
   width: inherit;
   padding: 0.4em;
@@ -11809,6 +11812,9 @@ ul.typeahead-list > li > a {
 }
 .reveal .progress {
   position: static;
+}
+body{ 
+  font-size: 170%
 }
 div.input_area {
   padding: 0.06em;
@@ -11843,6 +11849,7 @@ a.anchor-link {
 .rendered_html p {
   text-align: inherit;
 }
+
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
@@ -11927,17 +11934,17 @@ $$ Y = X\beta + \epsilon,$$<p></p>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The coefficients $\beta$ are <em>unknown</em> but <em>fixed</em> quantities.<br>
-The vector $\epsilon$ is the error term assumed to be normally distributed. (Zero mean, finite variance)</p>
+<p>The coefficients $\beta$ are <em>unknown</em> but <em>fixed</em> quantities.</p>
+<p>The vector $\epsilon$ is the error term assumed to be normally distributed. (Zero mean, finite variance)</p>
 
 </div>
 </div>
-</div></section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -11947,7 +11954,7 @@ $$ \hat{\beta}_{\text{OLS}} = \left(X^\top X\right)^{-1}X^\top Y.$$<p></p>
 
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -17320,9 +17327,12 @@ require(
             controls: true,
             progress: true,
             history: true,
+            width: "80%",
+            height: "100%",
+            margin: 0,
 
             theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+            transition: Reveal.getQueryHash().transition || 'convex', // default/cube/page/concave/zoom/linear/none
 
             // Optional libraries used to extend on reveal.js
             dependencies: [

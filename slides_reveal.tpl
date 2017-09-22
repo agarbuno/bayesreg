@@ -119,6 +119,9 @@ html {
 .reveal .progress {
   position: static;
 }
+body{ 
+  font-size: 170%
+}
 div.input_area {
   padding: 0.06em;
 }
